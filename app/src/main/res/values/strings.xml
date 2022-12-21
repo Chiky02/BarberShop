@@ -13,9 +13,14 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="Deudas">Deudas</string>
 
+    <!-- Seccion de menu desplegable trabajadores -->
+    <string name="select">Selecciona el peluquero</string>
+    <array name="Barbers">
+        <item>Peluquero 1</item>
+        <item>Peluquero 2</item>
+        <item>Peluquero 3</item>
+    </array>
 
-    <!-- items a seleccionar -->
-    <string name="itemPerson">Persona</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

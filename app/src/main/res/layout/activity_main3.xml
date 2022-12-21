@@ -7,24 +7,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="@string/itemPerson"
-    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-    >
-    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-        android:layout_width="match_parent"
-        android:id="@+id/persona"
-
-        android:layout_height="wrap_content"
-      >
-
-    </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
-
-
-
-</com.google.android.material.textfield.TextInputLayout>
 
     <include
         android:id="@+id/app_bar_main3"
