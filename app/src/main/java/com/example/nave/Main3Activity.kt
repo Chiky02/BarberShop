@@ -2,6 +2,7 @@ package com.example.nave
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.WindowId
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -32,6 +33,7 @@ class Main3Activity : AppCompatActivity() {
         }
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
+
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main3)
         // Passing each menu ID as a set of Ids because each
@@ -55,4 +57,5 @@ class Main3Activity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main3)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }
