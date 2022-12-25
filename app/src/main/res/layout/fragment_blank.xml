@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Deudas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.DEUDAS.BlankFragment">
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="Peluquero1:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="Peluquero1:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="609dp"
-        android:layout_height="492dp"
-        android:text="Button" />
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peluquero 2:"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peluquero 2:"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp" />
+</LinearLayout>

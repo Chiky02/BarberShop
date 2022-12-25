@@ -29,11 +29,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:inputType="none"
             android:hint="@string/select"
+            android:inputType="none"
+
+            android:textColorHint="#757575"
 
             android:textSize="@dimen/activity_horizontal_margin"
-
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,8 +86,9 @@
             android:id="@+id/autoCompleteTextView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="none"
             android:hint="@string/precio"
+            android:inputType="none"
+            android:textColorHint="#757575"
             tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -96,9 +98,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="60sp"
         android:textAlignment="center"
-        android:textColor="@color/purple_200"
+        android:textColor="#9575CD"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

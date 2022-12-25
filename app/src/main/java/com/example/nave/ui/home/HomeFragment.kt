@@ -13,26 +13,26 @@ import com.example.nave.R
 import com.example.nave.databinding.FragmentHomeBinding
 import java.text.SimpleDateFormat
 import java.util.Date
-import kotlin.concurrent.timerTask
+
 
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-   public var sum=0
+    var sum=0
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
     override fun onStart() {
         super.onStart()
         dropdown()
-        binding.textView6.setText(sum.toString())
+        binding.textView6.text = sum.toString()
     }
 
     override fun onResume() {
         super.onResume()
         dropdown()
-        binding.textView6.setText(sum.toString())
+        binding.textView6.text = sum.toString()
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,10 +45,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
-//obteniendo fecha y hora actual
-
-
         binding.button.setOnClickListener{
             information()
 
@@ -56,36 +52,37 @@ class HomeFragment : Fragment() {
         }
         return root
     }
-fun information(){
-    var currentDate = SimpleDateFormat("dd/M/yyyy").format(Date())
-    var currentTime=  SimpleDateFormat("hh:mm:ss").format(Date())
-    var barber2x=binding.autoCompleteTextView5.text
-    var pay=binding.autoCompleteTextView4.text
+    fun information(){
+        //obteniendo fecha y hora actual
+        val currentDate = SimpleDateFormat("dd/M/yyyy").format(Date())
+        val currentTime=  SimpleDateFormat("hh:mm:ss").format(Date())
+        val barber2x=binding.autoCompleteTextView5.text
+        val pay=binding.autoCompleteTextView4.text
 
-    if(barber2x.toString()==""){
+            if(barber2x.toString()==""){
 
-        Toast.makeText(context, "Debes elegir al barbero", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Debes elegir al barbero", Toast.LENGTH_LONG).show()
+            }
+            else if(pay.toString()=="") {
+                Toast.makeText(context, "Debes elegir el precio de pago", Toast.LENGTH_LONG).show()
+
+            }
+            else{
+
+                val xd= AlertDialog.Builder(context)
+                .setMessage("Se ha registrado $barber2x la fecha es  $currentDate y la hora es $currentTime y el valor de la peluqueada es de $pay " )
+                .setTitle("SALUDO")
+                xd.show()
+                binding.autoCompleteTextView5.setText("")
+                binding.autoCompleteTextView4.setText("")
+                sum=binding.textView6.text.toString().toInt()+pay.toString().toInt()
+                binding.textView6.text = sum.toString()
+            }
+
+
+
+
     }
-    else if(pay.toString()=="") {
-        Toast.makeText(context, "Debes elegir el precio de pago", Toast.LENGTH_LONG).show()
-
-    }
-    else{
-
-        var xd= AlertDialog.Builder(context)
-            .setMessage("Se ha registrado $barber2x la fecha es  $currentDate y la hora es $currentTime y el valor de la peluqueada es de $pay " )
-            .setTitle("SALUDO")
-            .show()
-       binding.autoCompleteTextView5.setText("")
-        binding.autoCompleteTextView4.setText("")
-        sum=binding.textView6.text.toString().toInt()+pay.toString().toInt()
-        binding.textView6.setText(sum.toString())
-    }
-
-
-
-
-}
 
     private fun dropdown(){
 
