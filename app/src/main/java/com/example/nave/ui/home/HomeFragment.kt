@@ -15,11 +15,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.Date
-
-
-
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
     var sum=0.0
     val db = Firebase.firestore
@@ -28,21 +24,24 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     override fun onStart() {
         super.onStart()
+
+        //con esto se carga el menu desplegable al empezar
         dropdown()
-
+        //con esto se obtiene el saldo actual al empezar
+        getInfo()
     }
-
     override fun onResume() {
         super.onResume()
+        //con esto se carga el menu desplegable al empezar
         dropdown()
-
+        //con esto se obtiene el saldo actual al empezar
+        getInfo()
     }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -50,8 +49,6 @@ class HomeFragment : Fragment() {
 
         binding.button.setOnClickListener{
             information()
-
-
         }
         return root
     }
@@ -60,10 +57,11 @@ class HomeFragment : Fragment() {
         val currentDate = SimpleDateFormat("dd/M/yyyy").format(Date())
         val currentTime=  SimpleDateFormat("hh:mm:ss").format(Date())
         val barber2x=binding.autoCompleteTextView5.text
+
         val pay=binding.autoCompleteTextView4.text
 
-            if(barber2x.toString()==""){
 
+            if(barber2x.toString()==""){
                 Toast.makeText(context, "Debes elegir al barbero", Toast.LENGTH_LONG).show()
             }
             else if(pay.toString()=="") {
@@ -146,25 +144,28 @@ class HomeFragment : Fragment() {
                     val va=document.get("Barbero").toString()
 
                   totalSum+=document.get("valor").toString().toDouble()
-                    if(va=="Peluquero 1"){
-                        p1+=document.get("valor").toString().toInt()
 
-                    }
-                    else if(va=="Peluquero 2"){
-                        p2+=document.get("valor").toString().toInt()
-                    }
-                    else{
-                        p3+=document.get("valor").toString().toInt()
+                    when (va) {
+                        "Peluquero 1" -> {
+                            p1+=document.get("valor").toString().toInt()
+
+                        }
+                        "Peluquero 2" -> {
+                            p2+=document.get("valor").toString().toInt()
+                        }
+                        else -> {
+                            p3+=document.get("valor").toString().toInt()
+                        }
                     }
 
 
                 }
-                val xd= AlertDialog.Builder(context)
+             /*   val xd= AlertDialog.Builder(context)
                     .setMessage("El peluquero 1 ha generado: $p1 \r " +
                             "El peluquero 2 ha generado: $p2 \n " +
                             " El peluquero 3 ha generado: $p3 \n" )
                     .setTitle("Reportes")
-                xd.show()
+                xd.show()*/
                 binding.textView6.text=totalSum.toString()
 
             }

@@ -11,11 +11,12 @@
 
             android:id="@+id/Deudas"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="@+id/Deudas" />
+            android:title="Ventas" />
+
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+
+            android:title="Registro" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -27,8 +28,11 @@
         <item
             android:id="@+id/blank"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="@string/Nose" />
-        <item android:title="@string/Deudas" />
+            android:title="Gastos" />
+
+        <item
+            android:id="@+id/fragmentPrueba"
+            android:title="Costos" />
     </group>
 
 </menu>

@@ -40,7 +40,12 @@ class Main3Activity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.blank
+
+                /*esta configuracion hace que la nueva seccion se vea como una inicio y no
+                *aparezca una flecha de ir atrás
+                 */
+
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.Deudas,R.id.fragmentPrueba
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
