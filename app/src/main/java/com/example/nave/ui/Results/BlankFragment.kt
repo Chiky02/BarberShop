@@ -1,4 +1,4 @@
-package com.example.nave.ui.DEUDAS
+package com.example.nave.ui.Results
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -27,6 +27,7 @@ class BlankFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(BlankViewModel::class.java)
         // TODO: Use the ViewModel
+        //se crear
     }
 
 }

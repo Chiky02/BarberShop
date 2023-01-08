@@ -1,5 +1,4 @@
 package com.example.nave.ui.home
-
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -52,15 +51,42 @@ class HomeFragment : Fragment() {
         }
         return root
     }
+
+
+
+    public fun pushInfo(barber2x: String,currentDate: String,currentTime: String,pay: String){
+
+
+        val cortes= hashMapOf(
+            "Barbero" to barber2x.toString(),
+            "Fecha" to currentDate.toString(),
+            "Hora" to currentTime.toString(),
+            "valor" to pay.toString()
+        )
+
+        // Add a new document with a generated ID
+        db.collection("Cortes")
+            //adiciona la coleccion de cortes acordde al hashmap
+            .add(cortes)
+            //en caso de exito muestra el siguiente mensaje
+            .addOnSuccessListener { documentReference ->
+
+                Toast.makeText(context, "Se ha registrado correctamente", Toast.LENGTH_LONG).show()
+            }
+            //en caso de error muestra el siguiente texto
+            .addOnFailureListener { e ->
+                Toast.makeText(context, "Error: $e", Toast.LENGTH_LONG).show()
+            }
+    }
+
+
+
     fun information(){
         //obteniendo fecha y hora actual
         val currentDate = SimpleDateFormat("dd/M/yyyy").format(Date())
         val currentTime=  SimpleDateFormat("hh:mm:ss").format(Date())
         val barber2x=binding.autoCompleteTextView5.text
-
         val pay=binding.autoCompleteTextView4.text
-
-
             if(barber2x.toString()==""){
                 Toast.makeText(context, "Debes elegir al barbero", Toast.LENGTH_LONG).show()
             }
@@ -71,31 +97,21 @@ class HomeFragment : Fragment() {
             else{
 
                 val xd= AlertDialog.Builder(context)
-                .setMessage("Se ha registrado $barber2x la fecha es  $currentDate y la hora es $currentTime y el valor de la peluqueada es de $pay " )
-                .setTitle("SALUDO")
+                    .setMessage("Deseas registras el corte por un valor de $pay")
+                    .setPositiveButton(android.R.string.ok) { dialog, which ->
+                        Toast.makeText(context, "Has elegiido aceptar", Toast.LENGTH_LONG).show()
+
+                       pushInfo(barber2x.toString(),currentDate,currentTime,pay.toString())
+                    }
+
+                    .setNegativeButton(android.R.string.cancel) { dialog, which ->
+                        Toast.makeText(context, "Accion cancelada", Toast.LENGTH_LONG).show()
+                    }
+
                 xd.show()
 
                 //variable tipo hashmap para almacenar los datos a enviar al firebase
-                val cortes= hashMapOf(
-                    "Barbero" to barber2x.toString(),
-                    "Fecha" to currentDate.toString(),
-                    "Hora" to currentTime.toString(),
-                    "valor" to pay.toString()
-                )
 
-                // Add a new document with a generated ID
-                db.collection("Cortes")
-                        //adiciona la coleccion de cortes acordde al hashmap
-                    .add(cortes)
-                        //en caso de exito muestra el siguiente mensaje
-                    .addOnSuccessListener { documentReference ->
-
-                        Toast.makeText(context, "DocumentSnapshot added with ID: ${documentReference.id}", Toast.LENGTH_LONG).show()
-                    }
-                        //en caso de error muestra el siguiente texto
-                    .addOnFailureListener { e ->
-                        Toast.makeText(context, "Error: $e", Toast.LENGTH_LONG).show()
-                    }
 
                 //limpiando espacios de texto
 

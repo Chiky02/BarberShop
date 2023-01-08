@@ -21,21 +21,22 @@ class Main3Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMain3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarMain3.toolbar)
+       setSupportActionBar(binding.appBarMain3.toolbar)
+
 
         binding.appBarMain3.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Esto podria ser de utilidad xd", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
 
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main3)
+      val navController = findNavController(R.id.nav_host_fragment_content_main3)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(

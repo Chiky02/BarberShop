@@ -18,7 +18,7 @@
 
             android:title="Registro" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/blank"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_gallery" />
         <item
@@ -26,7 +26,7 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
         <item
-            android:id="@+id/blank"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Gastos" />
 

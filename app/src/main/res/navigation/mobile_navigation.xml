@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/Deudas"
-        android:name="com.example.nave.ui.DEUDAS.BlankFragment"
+        android:name="com.example.nave.ui.Results.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment

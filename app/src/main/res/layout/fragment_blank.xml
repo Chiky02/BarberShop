@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.DEUDAS.BlankFragment">
+    tools:context=".ui.Results.BlankFragment">
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:text="Peluquero1:"
+        android:text="@string/peluquero1"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="175dp"
@@ -40,4 +41,29 @@
         android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total de ventas dia"
+        android:textColor="#4EBF39"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total de ventas mes"
+        android:textColor="#4EBF39"
+        android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:text="Blank framgment" />
+
+
 </LinearLayout>

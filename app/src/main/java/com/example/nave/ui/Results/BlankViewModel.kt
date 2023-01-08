@@ -1,4 +1,4 @@
-package com.example.nave.ui.DEUDAS
+package com.example.nave.ui.Results
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
