@@ -17,6 +17,7 @@
         app:layout_constraintVertical_bias="0.471">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/descriptText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Añade una descricion del prestamo" />
@@ -31,7 +32,7 @@
         android:ems="10"
         android:hint="Digita el valor"
         android:inputType="number"
-        android:background="#DFDFDF"
+
         app:layout_constraintBottom_toTopOf="@+id/descript"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +40,7 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <Button
+        android:id="@+id/buttonprest"
         android:layout_width="130dp"
         android:layout_height="65dp"
         android:layout_marginStart="135dp"

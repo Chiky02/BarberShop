@@ -12,13 +12,14 @@
     <string name="menu_home">Home</string>
     <string name="Nose">Nose</string>
     <string name="menu_gallery">Bar</string>
+    <string name="nav_gallery">Gastos</string>
     <string name="menu_slideshow">Prestamos</string>
     <string name="Deudas">Deudas</string>
 
     <!-- Seccion de menu desplegable trabajadores -->
     <string name="select">Selecciona el peluquero</string>
     <array name="Barbers">
-        <item>Peluquero 1</item>
+        <item>Cristian Robayo</item>
         <item>Peluquero 2</item>
         <item>Peluquero 3</item>
     </array>

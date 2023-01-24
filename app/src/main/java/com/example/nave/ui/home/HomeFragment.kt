@@ -1,4 +1,5 @@
 package com.example.nave.ui.home
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
         //con esto se carga el menu desplegable al empezar
         dropdown()
         //con esto se obtiene el saldo actual al empezar
-        getInfo()
+       getInfo()
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,14 +55,14 @@ class HomeFragment : Fragment() {
 
 
 
-    public fun pushInfo(barber2x: String,currentDate: String,currentTime: String,pay: String){
+     public fun pushInfo(barber2x: String,currentDate: String,currentTime: String,pay: String){
 
 
         val cortes= hashMapOf(
             "Barbero" to barber2x.toString(),
             "Fecha" to currentDate.toString(),
             "Hora" to currentTime.toString(),
-            "valor" to pay.toString()
+            "Valor" to pay.toString()
         )
 
         // Add a new document with a generated ID
@@ -81,12 +82,14 @@ class HomeFragment : Fragment() {
 
 
 
+
     fun information(){
         //obteniendo fecha y hora actual
         val currentDate = SimpleDateFormat("dd/M/yyyy").format(Date())
         val currentTime=  SimpleDateFormat("hh:mm:ss").format(Date())
         val barber2x=binding.autoCompleteTextView5.text
         val pay=binding.autoCompleteTextView4.text
+
             if(barber2x.toString()==""){
                 Toast.makeText(context, "Debes elegir al barbero", Toast.LENGTH_LONG).show()
             }
@@ -99,7 +102,7 @@ class HomeFragment : Fragment() {
                 val xd= AlertDialog.Builder(context)
                     .setMessage("Deseas registras el corte por un valor de $pay")
                     .setPositiveButton(android.R.string.ok) { dialog, which ->
-                        Toast.makeText(context, "Has elegiido aceptar", Toast.LENGTH_LONG).show()
+                        Toast.makeText(context, "Has elegido aceptar", Toast.LENGTH_LONG).show()
 
                        pushInfo(barber2x.toString(),currentDate,currentTime,pay.toString())
                     }
@@ -125,9 +128,6 @@ class HomeFragment : Fragment() {
 
 
             }
-
-
-
 
     }
 
@@ -159,29 +159,30 @@ class HomeFragment : Fragment() {
                 for (document in result) {
                     val va=document.get("Barbero").toString()
 
-                  totalSum+=document.get("valor").toString().toDouble()
+                  totalSum+=document.get("Valor").toString().toDouble()
 
                     when (va) {
-                        "Peluquero 1" -> {
-                            p1+=document.get("valor").toString().toInt()
+                        "Cristian Robayo" -> {
+                            p1+=document.get("Valor").toString().toInt()
 
                         }
                         "Peluquero 2" -> {
-                            p2+=document.get("valor").toString().toInt()
+                            p2+=document.get("Valor").toString().toInt()
                         }
                         else -> {
-                            p3+=document.get("valor").toString().toInt()
+                            p3+=document.get("Valor").toString().toInt()
                         }
                     }
 
 
                 }
-             /*   val xd= AlertDialog.Builder(context)
+
+              val xd= AlertDialog.Builder(context)
                     .setMessage("El peluquero 1 ha generado: $p1 \r " +
                             "El peluquero 2 ha generado: $p2 \n " +
                             " El peluquero 3 ha generado: $p3 \n" )
                     .setTitle("Reportes")
-                xd.show()*/
+                xd.show()
                 binding.textView6.text=totalSum.toString()
 
             }

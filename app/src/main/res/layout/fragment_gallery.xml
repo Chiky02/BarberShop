@@ -49,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Descripción del gasto realizado" />
@@ -60,7 +61,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="122dp"
         android:layout_marginBottom="75dp"
-        android:background="#DFDFDF"
+
         android:ems="10"
         android:hint="Digita el valor del gasto"
         android:inputType="number"

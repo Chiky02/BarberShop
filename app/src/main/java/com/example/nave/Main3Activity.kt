@@ -28,7 +28,7 @@ class Main3Activity : AppCompatActivity() {
 
 
         binding.appBarMain3.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Esto podria ser de utilidad xd", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "This option will be enable soon...", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
 
